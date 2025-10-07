@@ -1,0 +1,25 @@
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 2px;
+}
+
+.logo img {
+	width: 100px;
+	height: 75px;
+}
+
+.links a {
+	margin-right: 10px;
+	text-decoration: none;
+	color: #333;
+}
+
+.singUp {
+	background-color: #ffffff;
+	padding: 5px 10px;
+	border-radius: 5px;
+	width: 100px;
+	cursor: pointer;
+}
