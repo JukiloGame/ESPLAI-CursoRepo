@@ -30,6 +30,10 @@ body {
 	border-style: dotted; /*debug display*/	
 }
 
+.center-content {
+	
+}
+
 /* LINKS */
 .links a {
 	margin-right: 10px;
