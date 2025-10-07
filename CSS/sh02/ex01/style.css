@@ -23,11 +23,16 @@ html, body {
 /* TEXT */
 
 .image-grid subtitle {
-	
+	font-size: 12px;
+}
+.image-grid a {
+	text-decoration: none;
+	color: #333;
 }
 
-.image-grid h4 {
-	
+.image-grid h3 {
+	margin: auto;
+	font-weight: normal;
 }
 /* CONTENTS */
 .hero section {
