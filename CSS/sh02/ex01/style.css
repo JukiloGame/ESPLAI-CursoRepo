@@ -9,6 +9,7 @@ html, body {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	
 	padding: 2px;
 }
 
@@ -27,9 +28,12 @@ html, body {
 	grid-template-columns: 2fr repeat(4, 1fr);
 	grid-template-rows: repeat(4, auto);
 	grid-auto-flow: column;
-	padding: 3% 20% 3% 15%;
+	padding: 3% 5% 3% 15%;
 	z-index: 1;
-	font-size: 12px;
+}
+
+.footer h5, p {
+	font-size: 11px;
 }
 
 
@@ -91,7 +95,7 @@ html, body {
 
 /* LINKS */
 .links a {
-	margin-right: 10px;
+	margin-right: 40px;
 	text-decoration: none;
 	color: #333;
 }
