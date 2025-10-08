@@ -82,6 +82,7 @@ body {
 }
 
 .pokemonDashboard__item-evolution {
-	display: flex;
-	gap: 0.5rem;
+	border-left: 4px solid #888;
+	padding-left: 1rem;
+  	margin: 1.5rem 1rem;
 }
