@@ -59,5 +59,29 @@ body {
 
 /* ITEM INFO */
 .pokemonDashboard__item-info {
-	padding-left: 1rem;;
+	padding-left: 1rem;
+}
+
+.pokemonDashboard__item-name {
+	font-weight: bold;
+	margin: 0;
+}
+
+.pokemonDashboard__item-typesContainer {
+	display: flex;
+	margin: 0;
+	gap: 0.5rem;
+}
+
+.pokemonDashboard__item-type {
+	margin: 0;
+	padding: 0.1rem;
+	font-size: 0.8rem;
+	border: #929292 1px solid;
+	border-radius: 0.5rem;
+}
+
+.pokemonDashboard__item-evolution {
+	display: flex;
+	gap: 0.5rem;
 }
