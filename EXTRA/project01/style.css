@@ -1,0 +1,38 @@
+html, body {
+	font-family: "Encode Sans Semi Condensed:Regular", sans-serif;
+	margin: 0;
+}
+
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0;
+	background-color: black;
+	color: white;
+	border-bottom: 0.01em outset white;
+}
+
+.navbar ul {
+	margin: 0;
+	padding: 0;
+}
+
+.navbar li {
+	display: inline-block;
+	align-content: center;
+	list-style: none;
+	padding: 2em;
+	border-right: 0.01em outset white;
+
+}
+
+.navbar a {
+	text-decoration: none;
+	color: white
+}
+
+.navbar h1 {
+	margin: 0;
+	font-weight: normal;
+}
