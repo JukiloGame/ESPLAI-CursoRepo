@@ -1,10 +1,46 @@
 body {
 	font-family: 'Ubuntu', sans-serif;
-	background-color: #c7ca22;
+	background-color: #ffd82c;
 	font-size: 16px;
 	line-height: 1.5;
 	margin: 0;
 	padding: 0;
+}
+
+.background__top {
+	position: fixed;
+	width : 10vh;
+	height: 10vh;
+	background-color: #000000;
+	transform: rotate(45deg);
+	top: -5vh;
+	z-index: -1;
+}
+.brackground__top--left {
+	left: -5vh;
+}
+.brackground__top--right {
+	right: -5vh;
+}
+
+.brackground__bottom {
+	position: fixed;
+	width : 15vh;
+	height: 15vh;
+	background-color: #ff0000;
+	border-radius: 7.5vh 7.5vh 7.5vh 0;
+	bottom: -7.5vh;
+	z-index: -1;
+}
+
+
+.brackground__bottom--left {
+	left: -7.5vh;
+}
+
+.brackground__bottom--right {
+	right: -7.5vh;
+
 }
 
 .pokemonDashboard {
@@ -34,6 +70,7 @@ body {
 .pokemonDashboard__item {
 	background-color: #ffffff;
 	width: 100%;
+	border-radius: 0.2rem;
 }
 
 /* ITEM PORTRAIT */
@@ -43,6 +80,8 @@ body {
 	height: 15vh;
 	align-content: center;
 	background-color: #dcdcdc;
+	border-top-left-radius: 0.2rem;
+	border-top-right-radius: 0.2rem;
 }
 
 .pokemonCard__portrait img {
