@@ -10,7 +10,8 @@ body {
 .pokemonDashboard {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	padding: 1rem 40vh 1rem 40vh;
+	width: 80vh;
+	margin: 2vh auto;
 	gap: 1rem;
 	align-items: center;
 	justify-items: center;
@@ -63,12 +64,13 @@ body {
 
 /* ITEM INFO */
 .pokemonCard__info {
-	padding-left: 1rem;
+	padding: 1rem;
 }
 
 .pokemonCard__info-name {
 	font-weight: bold;
-	margin: 0;
+	margin: 0.2rem;
+	font-size: 1.2rem;
 }
 
 .pokemonCard__info div {
@@ -79,7 +81,8 @@ body {
 
 .pokemonCard__info-type {
 	margin: 0;
-	padding: 0.1rem;
+	margin-bottom: 0.2rem;
+	padding: 0.1rem 0.3rem;
 	font-size: 0.8rem;
 	border: #6d4431 1px solid;
 	color: #6d4431;
