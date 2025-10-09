@@ -26,7 +26,7 @@ body {
 
 #pokemonFilter {
 	width: 100%;
-	padding: 0.5rem;
+	padding: 0.5rem 0;
 	border: 1px solid #ccc;
 	text-align: center;
 	background-color: #ffffffd5;
