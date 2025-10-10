@@ -16,14 +16,14 @@ body {
 	top: -5vh;
 	z-index: -1;
 }
-.brackground__top--left {
+.background__top--left {
 	left: -5vh;
 }
-.brackground__top--right {
+.background__top--right {
 	right: -5vh;
 }
 
-.brackground__bottom {
+.background__bottom {
 	position: fixed;
 	width : 15vh;
 	height: 15vh;
@@ -34,23 +34,30 @@ body {
 }
 
 
-.brackground__bottom--left {
+.background__bottom--left {
 	left: -7.5vh;
 }
 
-.brackground__bottom--right {
+.background__bottom--right {
 	right: -7.5vh;
 
 }
 
 .pokemonDashboard {
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	width: 80vh;
-	margin: 2vh auto;
-	gap: 1rem;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	margin: 2vh 25vw 2vh 25vw;
+	gap: 20px;
 	align-items: center;
 	justify-items: center;
+}
+
+.pokemonDashboard__item {
+	background-color: #ffffff;
+	width: 100%;
+	height: 100%;
+	aspect-ratio: 1 / 1.2;
+	border-radius: 0.2rem;
 }
 
 /* FILTER */
@@ -67,17 +74,12 @@ body {
 	text-align: center;
 	background-color: #ffffffd5;
 }
-.pokemonDashboard__item {
-	background-color: #ffffff;
-	width: 100%;
-	border-radius: 0.2rem;
-}
 
 /* ITEM PORTRAIT */
 .pokemonCard__portrait {
 	position: relative;
 	width: 100%;
-	height: 15vh;
+	height: 50%;
 	align-content: center;
 	background-color: #dcdcdc;
 	border-top-left-radius: 0.2rem;
@@ -88,15 +90,16 @@ body {
  	display: block;
 	margin-left: auto;
 	margin-right: auto;
+	width: 50%;
 }
 
 .pokemonCard__portrait p {
 	position: absolute;
 	text-align: center;
-	font-size: small;
+	font-size: 1em;
 	color: #6d4431;
 	margin: 0;
-	padding: 0.1rem 0.5rem 0.1rem 0.5rem;
+	padding: 0.1em 0.5em 0.1em 0.5em;
 	bottom: 0;
 	background-color: #cdcdc8
 }
@@ -109,7 +112,7 @@ body {
 .pokemonCard__info-name {
 	font-weight: bold;
 	margin: 0.2rem;
-	font-size: 1.2rem;
+	font-size: 1.2em;
 }
 
 .pokemonCard__info div {
