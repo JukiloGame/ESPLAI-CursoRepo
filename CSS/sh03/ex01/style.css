@@ -90,15 +90,16 @@ body {
  	display: block;
 	margin-left: auto;
 	margin-right: auto;
+	width: 50%;
 }
 
 .pokemonCard__portrait p {
 	position: absolute;
 	text-align: center;
-	font-size: small;
+	font-size: 1em;
 	color: #6d4431;
 	margin: 0;
-	padding: 0.1rem 0.5rem 0.1rem 0.5rem;
+	padding: 0.1em 0.5em 0.1em 0.5em;
 	bottom: 0;
 	background-color: #cdcdc8
 }
@@ -111,7 +112,7 @@ body {
 .pokemonCard__info-name {
 	font-weight: bold;
 	margin: 0.2rem;
-	font-size: 1.2rem;
+	font-size: 1.2em;
 }
 
 .pokemonCard__info div {
