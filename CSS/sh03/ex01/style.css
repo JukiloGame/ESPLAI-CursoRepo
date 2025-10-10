@@ -16,14 +16,14 @@ body {
 	top: -5vh;
 	z-index: -1;
 }
-.brackground__top--left {
+.background__top--left {
 	left: -5vh;
 }
-.brackground__top--right {
+.background__top--right {
 	right: -5vh;
 }
 
-.brackground__bottom {
+.background__bottom {
 	position: fixed;
 	width : 15vh;
 	height: 15vh;
@@ -34,11 +34,11 @@ body {
 }
 
 
-.brackground__bottom--left {
+.background__bottom--left {
 	left: -7.5vh;
 }
 
-.brackground__bottom--right {
+.background__bottom--right {
 	right: -7.5vh;
 
 }
