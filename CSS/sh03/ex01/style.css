@@ -45,12 +45,19 @@ body {
 
 .pokemonDashboard {
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	width: 80vh;
-	margin: 2vh auto;
-	gap: 1rem;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	margin: 2vh 25vw 2vh 25vw;
+	gap: 20px;
 	align-items: center;
 	justify-items: center;
+}
+
+.pokemonDashboard__item {
+	background-color: #ffffff;
+	width: 100%;
+	height: 100%;
+	aspect-ratio: 1 / 1.2;
+	border-radius: 0.2rem;
 }
 
 /* FILTER */
@@ -67,17 +74,12 @@ body {
 	text-align: center;
 	background-color: #ffffffd5;
 }
-.pokemonDashboard__item {
-	background-color: #ffffff;
-	width: 100%;
-	border-radius: 0.2rem;
-}
 
 /* ITEM PORTRAIT */
 .pokemonCard__portrait {
 	position: relative;
 	width: 100%;
-	height: 15vh;
+	height: 50%;
 	align-content: center;
 	background-color: #dcdcdc;
 	border-top-left-radius: 0.2rem;
