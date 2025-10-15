@@ -4,9 +4,14 @@ let timer = {
 	name: "",
 	init(ms) {
 		// MÉTODO BIND
-		setTimeout(function(){
-			console.log(`Listo ${this.name}`);
-		}.bind(this), ms);
+		// setTimeout(function(){
+		// 	console.log(`Listo ${this.name}`);
+		// }.bind(this), ms);
+
+	 	// MÉTODO FLECHA
+		setTimeout(() => { 
+	 		console.log(`Listo ${this.name}`);
+	 	}, ms);
 	}
 
 }
