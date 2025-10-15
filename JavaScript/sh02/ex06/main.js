@@ -5,8 +5,14 @@ function greet(city){
 }
 
 
+function invokeCon(ctx, fn, ...args)  {
+	const boundFN = fn.bind(ctx)
+	boundFN(...args);
+}
+
 const person={name:'Lucía'};
 greet.call(person, 'Madrid');
 greet.apply(person, ['Sevilla']);
-const saludarLuis = greet.bind({name:'Luis'});
-saludarLuis('Valencia');
+const greetLuis = greet.bind({name:'Luis'});
+greetLuis('Valencia');
+invokeCon({name:'Ada'}, greet, 'Zaragoza');
