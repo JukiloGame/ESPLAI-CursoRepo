@@ -15,9 +15,11 @@ function myToUpperCase(value) {
 }
 
 
-
+function tagIndex(value, index) {
+	return `#${index}:${value}`
+}
 const listUpper = process(base, myToUpperCase);
-
+const listTaged = process(base, tagIndex);
 console.log(listUpper.join(','));
-
+console.log(listTaged.join(','));
 console.log(base.join(','));
