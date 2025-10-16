@@ -13,3 +13,10 @@ function calculateFrequency(list) {
 let map = calculateFrequency(text);
 console.log(map);
 
+let array = []
+for (const entry of map.entries()) {
+	for (i = 0; i < entry[1]; i++)
+		array.push(entry[0])
+}
+
+console.log(array.sort((a, b) => b - a))
