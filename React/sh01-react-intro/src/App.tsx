@@ -1,6 +1,6 @@
 import './App.css'
 /// import Greet from './ex01/Saludo'
-import Composition, {users} from './ex02/composicion'
+import Composition, {users} from './ex02/Composicion'
 
 
 export default function App() {
