@@ -1,12 +1,15 @@
 import './App.css'
-import Greet from './ex01/Saludo'
+/// import Greet from './ex01/Saludo'
+import Composition, {users} from './ex02/composicion'
+
 
 export default function App() {
 return (
 <main>
 <h1>Introducción a React</h1>
-<Greet name="Luis"/>
 {/* <Composicion /> */}
+
+<Composition users={users}/>
 {/* <Usuario /> */}
 {/* <PanelLogin /> */}
 {/* <Listas /> */}
