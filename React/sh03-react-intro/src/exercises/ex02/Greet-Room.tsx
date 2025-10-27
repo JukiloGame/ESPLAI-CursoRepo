@@ -1,16 +1,16 @@
 import Greeting from "./Greet";
-import RoomStatus from "./RoomConection";
+import RoomStatus from "./RoomConection.tsx";
 
 type level = "basic" | "advanced";
 
 function Ex02({ nivel }: { nivel: level }) {
   return (
-    <div className="ex01">
+    <div className="ex02">
       <h1>
-        Ejercicio 01 - Nivel <em>{nivel}</em>
+        Ejercicio 02 - Nivel <em>{nivel}</em>
       </h1>
-      <div className={`ex01-content ex01-content--${nivel}`}>
-        {nivel === "basic" ? <Greeting /> : <RoomStatus />}
+      <div className={`ex02-content ex02-content--${nivel}`}>
+        {nivel === "basic" ? <Greeting propName="Pepe" /> : <RoomStatus />}
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 function RoomStatus() {
-	return <></>
+	return (<h3>EnProceso</h3>)
 }
 
 export default RoomStatus;
