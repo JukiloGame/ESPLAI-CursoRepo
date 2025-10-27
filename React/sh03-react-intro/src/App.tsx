@@ -2,6 +2,7 @@
 import React, { useEffect, useId, useState } from "react";
 import "./App.css";
 import Ex01 from "./exercises/ex01/Timer-Clock";
+import Ex02 from "./exercises/ex02/Greet-Room";
 
 // Tipos
 type Level = "basic" | "advanced";
@@ -10,6 +11,7 @@ type ExerciseComponent = React.ComponentType<{ nivel: Level }>;
 // Registros estáticos fuera del componente
 const EXERCISES = {
   1: Ex01,
+  2: Ex02,
   // 2: OtroEjercicio,
 } as const satisfies Record<number, ExerciseComponent>;
 
