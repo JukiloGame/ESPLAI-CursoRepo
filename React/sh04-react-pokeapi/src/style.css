@@ -1,0 +1,148 @@
+body {
+	font-family: 'Ubuntu', sans-serif;
+	background-color: #ffd82c;
+	font-size: 16px;
+	line-height: 1.5;
+	margin: 0;
+	padding: 0;
+}
+
+.background__top {
+	position: fixed;
+	width : 10vh;
+	height: 10vh;
+	background-color: #000000;
+	transform: rotate(45deg);
+	top: -5vh;
+	z-index: -1;
+}
+.background__top--left {
+	left: -5vh;
+}
+.background__top--right {
+	right: -5vh;
+}
+
+.background__bottom {
+	position: fixed;
+	width : 15vh;
+	height: 15vh;
+	background-color: #ff0000;
+	border-radius: 7.5vh 7.5vh 7.5vh 0;
+	bottom: -7.5vh;
+	z-index: -1;
+}
+
+
+.background__bottom--left {
+	left: -7.5vh;
+}
+
+.background__bottom--right {
+	right: -7.5vh;
+
+}
+
+.pokemonDashboard {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	margin: 2vh 25vw 2vh 25vw;
+	gap: 20px;
+	align-items: center;
+	justify-items: center;
+}
+
+.pokemonDashboard__item {
+	background-color: #ffffff;
+	width: 100%;
+	height: 100%;
+	aspect-ratio: 1 / 1.2;
+	border-radius: 0.2rem;
+}
+
+/* FILTER */
+.pokemonDashboard__filter {
+	grid-column: 1 / -1;
+	width: 100%;
+	text-align: center;
+}
+
+#pokemonFilter {
+	width: 100%;
+	padding: 0.5rem 0;
+	border: 1px solid #ccc;
+	text-align: center;
+	background-color: #ffffffd5;
+}
+
+/* ITEM PORTRAIT */
+.pokemonCard__portrait {
+	position: relative;
+	width: 100%;
+	height: 50%;
+	align-content: center;
+	background-color: #dcdcdc;
+	border-top-left-radius: 0.2rem;
+	border-top-right-radius: 0.2rem;
+}
+
+.pokemonCard__portrait img {
+ 	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+}
+
+.pokemonCard__portrait p {
+	position: absolute;
+	text-align: center;
+	font-size: 1em;
+	color: #6d4431;
+	margin: 0;
+	padding: 0.1em 0.5em 0.1em 0.5em;
+	bottom: 0;
+	background-color: #cdcdc8
+}
+
+/* ITEM INFO */
+.pokemonCard__info {
+	padding: 1rem;
+}
+
+.pokemonCard__info-name {
+	font-weight: bold;
+	margin: 0.2rem;
+	font-size: 1.2em;
+}
+
+.pokemonCard__info div {
+	display: flex;
+	margin: 0;
+	gap: 0.5rem;
+}
+
+.pokemonCard__info-type {
+	margin: 0;
+	margin-bottom: 0.2rem;
+	padding: 0.1rem 0.3rem;
+	font-size: 0.8rem;
+	border: #6d4431 1px solid;
+	color: #6d4431;
+	border-radius: 0.5rem;
+}
+
+.pokemonCard__info blockquote {
+	border-left: 4px solid #6d4431;
+	padding-left: 0.2rem;
+  	margin: 0.2rem 0.2rem;
+}
+
+.pokemonCard__info blockquote p {
+	font-weight: none;
+	margin: 0;
+}
+
+.evolution__title {
+	font-size: small;
+	color: #6d4431;
+}
