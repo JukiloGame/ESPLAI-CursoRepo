@@ -10,7 +10,7 @@ function Ex02({ nivel }: { nivel: level }) {
         Ejercicio 02 - Nivel <em>{nivel}</em>
       </h1>
       <div className={`ex02-content ex02-content--${nivel}`}>
-        {nivel === "basic" ? <Greeting propName="Pepe" /> : <RoomStatus />}
+        {nivel === "basic" ? <Greeting propName="Pepe" /> : <RoomStatus roomId={"Hall"} />}
       </div>
     </div>
   );
