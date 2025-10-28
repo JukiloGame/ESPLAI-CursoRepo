@@ -3,6 +3,7 @@ import React, { useEffect, useId, useState } from "react";
 import "./App.css";
 import Ex01 from "./exercises/ex01/Timer-Clock";
 import Ex02 from "./exercises/ex02/Greet-Room";
+import Ex03 from "./exercises/ex03/Ex03";
 
 // Tipos
 type Level = "basic" | "advanced";
@@ -12,6 +13,7 @@ type ExerciseComponent = React.ComponentType<{ nivel: Level }>;
 const EXERCISES = {
   1: Ex01,
   2: Ex02,
+  3: Ex03,
   // 2: OtroEjercicio,
 } as const satisfies Record<number, ExerciseComponent>;
 
