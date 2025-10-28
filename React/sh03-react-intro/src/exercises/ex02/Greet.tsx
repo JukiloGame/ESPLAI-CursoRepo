@@ -11,9 +11,9 @@ function Greeting({propName}: {propName: string}) {
 
 	}, [name])
 	return (
-		<>
+		<form>
 			<p>Nombre: <input type="Text" value={name} onChange={handleChange} /></p>
-		</>
+		</form>
 	)
 }
 
