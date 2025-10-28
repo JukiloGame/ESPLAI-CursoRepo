@@ -11,9 +11,9 @@ function App() {
 		<form>	
 			<h3>Seleccione habitación</h3>
 			<select value={room} onChange={handleChange}>
-				<option value="kitchen"> Cocina </option>
-				<option value="Hall"> Salón </option>
-				<option value="Bath"> Baño </option>
+				<option value="general"> General </option>
+				<option value="support"> Soporte </option>
+				<option value="random"> Random </option>
 			</select>
 			<RoomStatus roomId={room}/>	
 		</form>
