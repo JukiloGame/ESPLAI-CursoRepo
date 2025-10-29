@@ -54,24 +54,51 @@ function PokeDashboard() {
 	const [pokemons, setPokemons] = useState<Pokemon[]>([]);
 	//const [page, setPage] = useState<Page>();
 	const [pageOffset, setPageOffset] = useState<number>(0);
+	const [isLoading, setIsLoading] = useState<boolean>(false);
 	const limit = 21;
 
 	useEffect(() => {
+		const controller = new AbortController();
+		const signal = controller.signal;
+
 		async function fetchPokemons() {
-			const res = await fetch(`https://pokeapi.co/api/v2/pokemon/?offset=${pageOffset}&limit=${limit}/`);
+		let details: any[] = [];
+		setIsLoading(true);
+
+		try {
+			const res = await fetch(
+				`https://pokeapi.co/api/v2/pokemon/?offset=${pageOffset}&limit=${limit}/`,
+				{ signal }
+				);
+
+			if (!res.ok) throw new Error ("Data not found")
 			const data : Page = await res.json();
 			//setPage(data);
-			
-			const details = await Promise.all(
+
+			details = await Promise.all(
 				data.results.map(async (p: any) => {
-					const res = await fetch(p.url);
+					const res = await fetch(p.url, { signal }) ;
 					return await res.json();
 				})
 			);
 			setPokemons(details);
+			} catch (error : any) {
+				if (error.name === "AbortError") {
+					console.log("Fetch aborted")
+				} else {
+					console.error(error)
+				} 
+			} finally {
+				setIsLoading(false);
+			} 
 		}
 		fetchPokemons();
+
+		return () => {
+			controller.abort();
+		};
 	},[pageOffset]);
+	
 	return (
 		<>
 		<nav className="pokemonPaging"> 
