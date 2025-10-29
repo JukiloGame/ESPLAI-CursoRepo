@@ -73,6 +73,15 @@ body {
 	width: 100%;
 	text-align: center;
 }
+.pokemonPaging {
+	display: flex;
+	margin: 2vw auto;
+	width: 50%;
+	gap: 2rem;
+	justify-content: center;
+	align-items: center;
+	
+}
 
 #pokemonFilter {
 	width: 100%;
@@ -82,6 +91,21 @@ body {
 	background-color: #ffffffd5;
 }
 
+/* BUTTONS */ 
+.pokemonPaging button {
+	padding: 1vw;
+	background-color: #d4d4d4;
+	font-size: 1rem;
+}
+
+.pokemonPaging button:not(:disabled):hover {
+	background-color: #000000;
+	color: #ffffff;
+}
+.pokemonPaging button:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
 /* ITEM PORTRAIT */
 .pokemonCard__portrait {
 	position: relative;

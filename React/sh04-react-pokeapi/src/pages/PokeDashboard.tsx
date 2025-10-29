@@ -52,15 +52,15 @@ export interface Type {
 
 function PokeDashboard() {
 	const [pokemons, setPokemons] = useState<Pokemon[]>([]);
-	const [page, setPage] = useState<Page>();
+	//const [page, setPage] = useState<Page>();
 	const [pageOffset, setPageOffset] = useState<number>(0);
-	const limit = 20;
+	const limit = 21;
 
 	useEffect(() => {
 		async function fetchPokemons() {
 			const res = await fetch(`https://pokeapi.co/api/v2/pokemon/?offset=${pageOffset}&limit=${limit}/`);
-			const data = await res.json();
-			setPage(data);
+			const data : Page = await res.json();
+			//setPage(data);
 			
 			const details = await Promise.all(
 				data.results.map(async (p: any) => {
@@ -74,6 +74,10 @@ function PokeDashboard() {
 	},[pageOffset]);
 	return (
 		<>
+		<nav className="pokemonPaging"> 
+			{<button disabled={pageOffset <= 0} onClick={() => setPageOffset(pageOffset - limit)}>Anterior</button>}
+			<button onClick={() => setPageOffset(pageOffset + limit)}>Siguiente</button>
+		</nav>
 		<section className="pokemonDashboard"> 
 		<div className="pokemonDashboard__filter">
 				<input id="pokemonFilter" type="text" placeholder="Filtrar pokemons por nombre..."/>
@@ -87,7 +91,13 @@ function PokeDashboard() {
 			/>) )}
 		{/* <PokeCard id={1} name="Bulbasaur" types={["Grass", "Poison"]} img="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png" /> */}
 		</section>
+		<nav className="pokemonPaging"> 
+			{<button disabled={pageOffset <= 0} onClick={() => setPageOffset(pageOffset - limit)}>Anterior</button>}
+			<button onClick={() => setPageOffset(pageOffset + limit)}>Siguiente</button>
+		</nav>
 		</>
+
+		
 	)
 }
 
