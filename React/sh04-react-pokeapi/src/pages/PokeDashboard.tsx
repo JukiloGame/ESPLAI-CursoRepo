@@ -8,11 +8,26 @@ import { useFilteredPokemons } from "../hooks/useFilteredPokemons";
 
 function PokeDashboard() {
 	const [pokemons, setPokemons] = useState<Pokemon[]>([]);
-	//const [page, setPage] = useState<Page>();
+	const [page, setPage] = useState<Page[]>();
 	const [pageOffset, setPageOffset] = useState<number>(0);
 	const [isLoading, setIsLoading] = useState<boolean>(false);
 	const limit = 21;
 
+
+	useEffect(() => {
+	async function fetchAll() {
+		setIsLoading(true);
+		try {
+		const res = await fetch(`https://pokeapi.co/api/v2/pokemon?offset=0&limit=${limit}`);
+		const data = await res.json();
+		setPage(data.results);
+		} catch (error : any) { console.error(error); }
+		finally { setIsLoading(false); }
+	}
+	fetchAll();
+	}, []);
+
+	const { filtered, filterText, setFilterText } = useFilteredPokemons(page);
 	useEffect(() => {
 		const controller = new AbortController();
 		const signal = controller.signal;
@@ -23,7 +38,7 @@ function PokeDashboard() {
 
 		try {
 			const res = await fetch(
-				`https://pokeapi.co/api/v2/pokemon/?offset=${pageOffset}&limit=${limit}/`,
+				filtered.map((p: any) => p.name)[pageOffset],
 				{ signal }
 				);
 
@@ -39,22 +54,12 @@ function PokeDashboard() {
 			);
 			setPokemons(details);
 			} catch (error : any) {
-				if (error.name === "AbortError") {
-					console.log("Fetch aborted")
-				} else {
-					console.error(error)
-				} 
-			} finally {
-				setIsLoading(false);
-			} 
+				error.name === "AbortError" ? console.log("Fetch aborted") : console.error(error)  
+			} finally { setIsLoading(false); } 
 		}
 		fetchPokemons();
-
-		return () => {
-			controller.abort();
-		};
+		return () => {controller.abort();};
 	},[pageOffset]);
-	const { filtered, filterText, setFilterText } = useFilteredPokemons(pokemons);
 
 	return (
 		<>
@@ -71,7 +76,7 @@ function PokeDashboard() {
 			/>
 		</div>
 
-		{filtered.map(({id, name, types, sprites}) => ( 
+		{pokemons.map(({id, name, types, sprites}) => ( 
 			<PokeCard 
 				id={id} 
 				name={name}

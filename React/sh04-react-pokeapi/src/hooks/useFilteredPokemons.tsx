@@ -1,12 +1,12 @@
 import { useState, useMemo } from "react";
-import type { Pokemon } from '../types'
+import type { Page } from '../types'
 
-export function useFilteredPokemons(pokemons: Pokemon[]) {
+export function useFilteredPokemons(pokemons: Page) {
 	const [filterText, setFilterText] = useState("");
 
 	const filtered = useMemo(() => {
-		return pokemons.filter( p => 
-		p.name.toLowerCase().includes(filterText.toLowerCase())
+		return pokemons.results.map(p => p).filter( n => 
+		n.name.toLowerCase().includes(filterText.toLowerCase())
 		);
 	}, [pokemons, filterText]);
 
