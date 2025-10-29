@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import type { Pokemon, Page } from '../types'
+import type { Pokemon } from '../types'
 
 export function useFilteredPokemons(pokemons: Pokemon[]) {
 	const [filterText, setFilterText] = useState("");
