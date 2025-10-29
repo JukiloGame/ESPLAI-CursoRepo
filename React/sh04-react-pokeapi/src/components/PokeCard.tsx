@@ -19,7 +19,7 @@ function PokeCard({id, name, types, img}: PokeCardProps) {
 				<p className="pokemonCard__info-name"> {name} </p>
 				<div>
 					<p className="pokemonCard__info-type"> {types[0] !== undefined && types[0]} </p>
-					<p className="pokemonCard__info-type"> {types[1] !== undefined && types[1]} </p>
+					{types[1] !== undefined ? <p className="pokemonCard__info-type"> {types[1]} </p> : <br/>}
 				</div>
 				<blockquote> 
 					<p className="evolution__title"> Evoluciona de: </p>
