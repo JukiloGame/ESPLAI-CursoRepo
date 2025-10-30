@@ -8,7 +8,7 @@ import { useFilteredPokemons } from "../hooks/useFilteredPokemons";
 
 function PokeDashboard() {
 	const [pokemons, setPokemons] = useState<Pokemon[]>([]);
-	const [page, setPage] = useState<Page[]>();
+	const [page, setPage] = useState<Page>({ count: 0, next: "", previous: null, results: [] });
 	const [pageOffset, setPageOffset] = useState<number>(0);
 	const [isLoading, setIsLoading] = useState<boolean>(false);
 	const limit = 21;
@@ -18,9 +18,9 @@ function PokeDashboard() {
 	async function fetchAll() {
 		setIsLoading(true);
 		try {
-		const res = await fetch(`https://pokeapi.co/api/v2/pokemon?offset=0&limit=${limit}`);
+		const res = await fetch(`https://pokeapi.co/api/v2/pokemon?offset=0&limit=1300`);
 		const data = await res.json();
-		setPage(data.results);
+		setPage(data);
 		} catch (error : any) { console.error(error); }
 		finally { setIsLoading(false); }
 	}
@@ -37,17 +37,10 @@ function PokeDashboard() {
 		setIsLoading(true);
 
 		try {
-			const res = await fetch(
-				filtered.map((p: any) => p.name)[pageOffset],
-				{ signal }
-				);
-
-			if (!res.ok) throw new Error ("Data not found")
-			const data : Page = await res.json();
-			//setPage(data);
+			const paginated = filtered.slice(pageOffset, pageOffset + limit);
 
 			details = await Promise.all(
-				data.results.map(async (p: any) => {
+				paginated.map(async (p: any) => {
 					const res = await fetch(p.url, { signal }) ;
 					return await res.json();
 				})
@@ -59,7 +52,7 @@ function PokeDashboard() {
 		}
 		fetchPokemons();
 		return () => {controller.abort();};
-	},[pageOffset]);
+	},[filtered, pageOffset]);
 
 	return (
 		<>
