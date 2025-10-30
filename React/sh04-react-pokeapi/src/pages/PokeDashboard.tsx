@@ -1,0 +1,90 @@
+import { useState, useEffect } from 'react'
+import PokeCard from '../components/PokeCard'
+import '../style.css'
+import type { Pokemon, Page } from '../types'
+import { useFilteredPokemons } from "../hooks/useFilteredPokemons";
+
+
+
+function PokeDashboard() {
+	const [pokemons, setPokemons] = useState<Pokemon[]>([]);
+	const [page, setPage] = useState<Page>({ count: 0, next: "", previous: null, results: [] });
+	const [pageOffset, setPageOffset] = useState<number>(0);
+	const [isLoading, setIsLoading] = useState<boolean>(false);
+	const limit = 21;
+
+
+	useEffect(() => {
+	async function fetchAll() {
+		setIsLoading(true);
+		try {
+		const res = await fetch(`https://pokeapi.co/api/v2/pokemon?offset=0&limit=1300`);
+		const data = await res.json();
+		setPage(data);
+		} catch (error : any) { console.error(error); }
+		finally { setIsLoading(false); }
+	}
+	fetchAll();
+	}, []);
+
+	const { filtered, filterText, setFilterText } = useFilteredPokemons(page);
+	useEffect(() => {
+		const controller = new AbortController();
+		const signal = controller.signal;
+
+		async function fetchPokemons() {
+		let details: any[] = [];
+		setIsLoading(true);
+
+		try {
+			const paginated = filtered.slice(pageOffset, pageOffset + limit);
+
+			details = await Promise.all(
+				paginated.map(async (p: any) => {
+					const res = await fetch(p.url, { signal }) ;
+					return await res.json();
+				})
+			);
+			setPokemons(details);
+			} catch (error : any) {
+				error.name === "AbortError" ? console.log("Fetch aborted") : console.error(error)  
+			} finally { setIsLoading(false); } 
+		}
+		fetchPokemons();
+		return () => {controller.abort();};
+	},[filtered, pageOffset]);
+
+	return (
+		<>
+		<nav className="pokemonPaging"> 
+			{<button disabled={pageOffset <= 0} onClick={() => setPageOffset(pageOffset - limit)}>Anterior</button>}
+			<button onClick={() => setPageOffset(pageOffset + limit)}>Siguiente</button>
+		</nav>
+		<section className="pokemonDashboard"> 
+		<div className="pokemonDashboard__filter">
+			<input
+			value={filterText}
+			onChange={(e) => setFilterText(e.target.value)}
+			id="pokemonFilter" type="text" placeholder="Filtrar pokemons por nombre..."
+			/>
+		</div>
+
+		{pokemons.map(({id, name, types, sprites}) => ( 
+			<PokeCard 
+				id={id} 
+				name={name}
+				types={types.map((t: any) => t.type.name)} 
+				img={sprites.front_default} 
+			/>) )}
+		</section>
+		<nav className="pokemonPaging"> 
+			{<button disabled={pageOffset <= 0} onClick={() => setPageOffset(pageOffset - limit)}>Anterior</button>}
+			<button onClick={() => setPageOffset(pageOffset + limit)}>Siguiente</button>
+		</nav>
+		</>
+
+		
+	)
+}
+
+export default PokeDashboard
