@@ -52,10 +52,15 @@ SELECT title, rating FROM movies INNER JOIN Boxoffice ON id = Movie_id ORDER BY 
 ```
 ## Ejercicio 7: OUTER JOINs
 ###### LEFT/RIGHT/ALL JOINs == OUTTER interfix. 
-###### 
 ```
 SELECT DISTINCT building FROM employees LEFT JOIN Buildings ON Building = Building_name;
 SELECT Building_name, capacity FROM Buildings
 SELECT DISTINCT building_name, Role FROM buildings LEFT JOIN Employees on Building_name = Building
 
+```
+## Ejercicio 8: A short note on NULLs
+###### IS/IS NOT NULL
+```
+SELECT name, role FROM employees WHERE Building is null;
+SELECT DISTINCT building_name FROM buildings LEFT JOIN Employees on Building_name = Building WHERE name IS NULL
 ```
