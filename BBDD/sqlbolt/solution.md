@@ -50,3 +50,12 @@ SELECT * FROM movies INNER JOIN Boxoffice ON id = Movie_id
 SELECT * FROM movies INNER JOIN Boxoffice ON id = Movie_id where Domestic_sales < International_sales
 SELECT title, rating FROM movies INNER JOIN Boxoffice ON id = Movie_id ORDER BY rating DESC
 ```
+## Ejercicio 7: OUTER JOINs
+###### LEFT/RIGHT/ALL JOINs == OUTTER interfix. 
+###### 
+```
+SELECT DISTINCT building FROM employees LEFT JOIN Buildings ON Building = Building_name;
+SELECT Building_name, capacity FROM Buildings
+SELECT DISTINCT building_name, Role FROM buildings LEFT JOIN Employees on Building_name = Building
+
+```
