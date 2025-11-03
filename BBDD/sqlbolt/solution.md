@@ -14,3 +14,11 @@ SELECT title FROM movies where year>=2000 and year<=2010;
 SELECT title FROM movies WHERE year NOT BETWEEN 2000 and 2010;
 SELECT title, year FROM movies WHERE id <= 5;
 ```
+## Ejercicio 3
+```
+SELECT * FROM movies where title LIKE "%Toy Story%";
+SELECT * FROM movies where director LIKE "John Lasseter";
+SELECT * FROM movies where director NOT LIKE "John Lasseter";
+SELECT * FROM movies where title LIKE "WALL-_";
+```
+
