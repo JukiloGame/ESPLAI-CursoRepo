@@ -40,3 +40,10 @@ SELECT city FROM north_american_cities WHERE longitude < (
 SELECT city, population FROM north_american_cities WHERE country = "Mexico" ORDER BY population DESC LIMIT 2 
 SELECT city, population FROM north_american_cities WHERE country = "United States" ORDER BY population DESC limit 2 offset 2
 ```
+
+## Ejercicio 6
+```
+SELECT * FROM movies INNER JOIN Boxoffice ON id = Movie_id
+SELECT * FROM movies INNER JOIN Boxoffice ON id = Movie_id where Domestic_sales < International_sales
+SELECT title, rating FROM movies INNER JOIN Boxoffice ON id = Movie_id ORDER BY rating DESC
+```
