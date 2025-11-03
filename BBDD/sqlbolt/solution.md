@@ -29,3 +29,14 @@ SELECT title FROM movies ORDER BY year DESC LIMIT 4;
 SELECT * FROM movies ORDER BY title ASC LIMIT 5;
 SELECT * FROM movies ORDER BY title ASC LIMIT 5 OFFSET 5;
 ```
+
+## Ejercicio 5
+```
+SELECT city, population FROM north_american_cities WHERE country = "Canada";
+SELECT city FROM north_american_cities WHERE Country LIKE "United States" ORDER BY latitude DESC;
+SELECT city FROM north_american_cities WHERE longitude < (
+         SELECT longitude FROM north_american_cities WHERE city = "Chicago"
+) ORDER BY longitude
+SELECT city, population FROM north_american_cities WHERE country = "Mexico" ORDER BY population DESC LIMIT 2 
+SELECT city, population FROM north_american_cities WHERE country = "United States" ORDER BY population DESC limit 2 offset 2
+```
