@@ -10,3 +10,8 @@ puede tener varios números de teléfono (móvil, trabajo y casa), pero cada
 número pertenece a una sola persona. También se almacena el correo
 electrónico si lo hubiera.
 ![Solución ex02](img/solution_ex02.png)
+## ex03 - Biblioteca
+Una biblioteca pública necesita gestionar los libros que posee y el registro de
+préstamos a usuarios. Debe poder consultar en cualquier momento qué usuario
+tiene qué libro y cuándo debe devolverlo.
+![Solución ex03](img/solution_ex03.png)
