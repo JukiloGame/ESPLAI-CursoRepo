@@ -15,3 +15,8 @@ Una biblioteca pública necesita gestionar los libros que posee y el registro de
 préstamos a usuarios. Debe poder consultar en cualquier momento qué usuario
 tiene qué libro y cuándo debe devolverlo.
 ![Solución ex03](img/solution_ex03.png)
+## ex04 - Tienda Online
+Una tienda online necesita almacenar información sobre los productos que
+vende, sus clientes y los pedidos realizados. Cada pedido puede contener
+varios productos, y cada cliente puede realizar varios pedidos.
+![Solución ex04](img/solution_ex04.png)
