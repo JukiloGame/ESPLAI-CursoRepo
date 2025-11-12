@@ -19,8 +19,8 @@ public class ShoppingCart {
 		double subtotal() { return product.GetPrice() * units; }
 
 		public void getProductInfo() {
-			//System.out.printf("Nombre: %s || Unidades %i || Subtotal: %d" product.GetName(), units, subtotal());
-			System.out.printf(product.GetName() + " || " + units + " || "  +  " || " + subtotal());
+			System.out.printf("Nombre: %s || Unidades %d || Subtotal: %.2f \n", product.GetName(), units, subtotal());
+			// System.out.printf(product.GetName() + " || " + units + " || "  +  " || " + subtotal());
 		}
 	}
 
