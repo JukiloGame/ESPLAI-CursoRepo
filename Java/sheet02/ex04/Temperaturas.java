@@ -1,4 +1,4 @@
-package Java.sheet02.ex04;
+package sheet02.ex04;
 
 import java.text.DecimalFormat;
 

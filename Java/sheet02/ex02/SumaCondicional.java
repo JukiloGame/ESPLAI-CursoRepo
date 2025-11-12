@@ -1,4 +1,4 @@
-package Java.sheet02.ex02;
+package sheet02.ex02;
 
 public class SumaCondicional {
 	public static void main(String[] var0) {
