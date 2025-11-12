@@ -15,14 +15,14 @@ public class Product {
 		this.price = price;
 		this.stock = 0;
 	}
-	public void ShowData() {
+	public void showData() {
 		System.out.println("Nombre: " + this.name + " || Precio: " + this.price + " || Stock: " + this.stock);
 	}
-	public double GetPrice() {
+	public double getPrice() {
 		return this.price;
 	}
 
-	public String GetName() {
+	public String getName() {
 		return this.name;
 	}
 
