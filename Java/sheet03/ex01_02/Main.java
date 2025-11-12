@@ -14,9 +14,9 @@ public class Main {
 		// p2.stock = 32;
 		// p2.MostrarDatos();
 		//? Ejericicio 2
-		producto p3 = new producto("Gambas", 11.59);
-		p3.MostrarDatos();
-		producto p4 = new producto("Monster", 2.20, 15);
-		p4.MostrarDatos();
+		Product p3 = new Product("Gambas", 11.59);
+		p3.ShowData();
+		Product p4 = new Product("Monster", 2.20, 15);
+		p4.ShowData();
 	}
 }
