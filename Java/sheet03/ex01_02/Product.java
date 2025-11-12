@@ -18,4 +18,7 @@ public class Product {
 	public void ShowData() {
 		System.out.println("Nombre: " + this.name + " || Precio: " + this.price + " || Stock: " + this.stock);
 	}
+	public double GetPrice() {
+		return this.price;
+	}
 }
