@@ -1,4 +1,4 @@
-package Java.sheet02.ex03;
+package sheet02.ex03;
 
 public class PromedioArray {
 	static int[] numbers = {4, 8, 6, 2};

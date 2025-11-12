@@ -1,4 +1,4 @@
-package Java.sheet02.ex01;
+package sheet02.ex01;
 
 public class SaludoBasico {	
 	public static void main(String[] args) {
