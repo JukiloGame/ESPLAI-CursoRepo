@@ -21,4 +21,10 @@ public class Product {
 	public double GetPrice() {
 		return this.price;
 	}
+
+	public String GetName() {
+		return this.name;
+	}
+
+
 }
