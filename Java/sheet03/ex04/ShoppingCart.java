@@ -30,7 +30,7 @@ public class ShoppingCart {
 	private static List<CartLine> cartLines = new ArrayList<>();
 
 	public static void getResume() {
-		int total = 0;
+		double total = 0;
 		for (CartLine cartLine : cartLines) {	
 			System.out.println(cartLine.getProductInfo());
 			total += cartLine.subtotal();
