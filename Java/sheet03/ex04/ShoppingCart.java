@@ -9,6 +9,8 @@ public class ShoppingCart {
 		addProduct(new Product("Fanta", 1.59), 20);
 		addProduct(new Product("Gambas", 11.59), 30);
 
+		removeProduct(new Product("Gambas"), 40);
+
 		getResume();
 
 	}
@@ -33,7 +35,7 @@ public class ShoppingCart {
 		for (CartLine cartLine : cartLines) {	
 			System.out.println(cartLine.getProductInfo());
 		}
-		System.out.println("\n Precio total: " + total() + " euros");
+		System.out.printf("\n Precio total: %.2f euros", total());
 		
 	}
 
@@ -56,5 +58,18 @@ public class ShoppingCart {
 		CartLine line = new CartLine(p, units);
 		line.subtotal();
 		return cartLines.add(line);
+	}
+
+	public static boolean removeProduct(Product p, int units) {
+		if (p == null || units <= 0) return false;
+		for (int i = 0; i < cartLines.size(); i++) {
+			if (cartLines.get(i).product.getName().equals(p.getName())) {
+				if (cartLines.get(i).units < units) return false;
+				cartLines.get(i).units -= units;
+				if (cartLines.get(i).units == 0) cartLines.remove(i);
+				return true;
+			}
+		}
+		return false;
 	}
 }
