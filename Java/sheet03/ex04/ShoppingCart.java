@@ -52,6 +52,7 @@ public class ShoppingCart {
 		for (int i = 0; i < cartLines.size(); i++) {
 			if (cartLines.get(i).product.getName().equals(p.getName())) {
 				cartLines.get(i).units += units;
+				return;
 			}
 		}
 		CartLine line = new CartLine(p, units);
