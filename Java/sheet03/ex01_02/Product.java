@@ -15,6 +15,11 @@ public class Product {
 		this.price = price;
 		this.stock = 0;
 	}
+	public Product(String name) {
+		this.name = name;
+		this.price = 0;
+		this.stock = 0;
+	}
 	public void showData() {
 		System.out.println("Nombre: " + this.name + " || Precio: " + this.price + " || Stock: " + this.stock);
 	}
