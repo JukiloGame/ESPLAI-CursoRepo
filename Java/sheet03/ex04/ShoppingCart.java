@@ -47,29 +47,28 @@ public class ShoppingCart {
 		return total;
 	}
 
-	public static boolean addProduct(Product p, int units) {
-		if (p == null || units <= 0 || p.getPrice() < 0) return false;
+	public static void addProduct(Product p, int units) {
+		if (p == null || units <= 0 || p.getPrice() < 0) throw new IllegalAccessError("Mal formato al introducir producto");
 		for (int i = 0; i < cartLines.size(); i++) {
 			if (cartLines.get(i).product.getName().equals(p.getName())) {
 				cartLines.get(i).units += units;
-				return true;
 			}
 		}
 		CartLine line = new CartLine(p, units);
 		line.subtotal();
-		return cartLines.add(line);
+		cartLines.add(line);
 	}
 
-	public static boolean removeProduct(Product p, int units) {
-		if (p == null || units <= 0) return false;
+	public static void removeProduct(Product p, int units) {
+		if (p == null || units <= 0) throw new IllegalAccessError("No se peden unidades negativas");
 		for (int i = 0; i < cartLines.size(); i++) {
 			if (cartLines.get(i).product.getName().equals(p.getName())) {
-				if (cartLines.get(i).units < units) return false;
+				if (cartLines.get(i).units < units) throw new IllegalAccessError("Las unidades a eliminar no pueden sobrepasar el Stock Actual");
 				cartLines.get(i).units -= units;
 				if (cartLines.get(i).units == 0) cartLines.remove(i);
-				return true;
+				return;
 			}
 		}
-		return false;
+		return;
 	}
 }
