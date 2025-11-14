@@ -30,13 +30,19 @@ public class ShoppingCart {
 	private static List<CartLine> cartLines = new ArrayList<>();
 
 	public static void getResume() {
-		double total = 0;
 		for (CartLine cartLine : cartLines) {	
 			System.out.println(cartLine.getProductInfo());
+		}
+		System.out.println("\n Precio total: " + total() + " euros");
+		
+	}
+
+	public static double total() {
+		double total = 0;
+		for (CartLine cartLine : cartLines) {	
 			total += cartLine.subtotal();
 		}
-		System.out.println("\n Precio total: " + total + " euros");
-		
+		return total;
 	}
 
 	public static boolean addProduct(Product p, int units) {
