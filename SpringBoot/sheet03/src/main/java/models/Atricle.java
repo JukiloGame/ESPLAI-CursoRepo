@@ -3,6 +3,8 @@ package models;
 import jakarta.persistence.*;
 
 @Entity
+// @Table(unituqueConstraints = @UniqueConstaint(name = "UK_Article_reference", columnNames = "reference"))
+@Table (name = "Articles")
 public class Atricle {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
