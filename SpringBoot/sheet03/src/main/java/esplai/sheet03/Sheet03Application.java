@@ -6,8 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class Sheet03Application {
 
-	public static void main(String[] args) {
-		SpringApplication.run(Sheet03Application.class, args);
-	}
-
+    public static void main(String[] args) {
+        SpringApplication.run(Sheet03Application.class, args);
+    }
 }
