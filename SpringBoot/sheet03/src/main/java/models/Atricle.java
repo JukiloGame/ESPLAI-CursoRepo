@@ -1,9 +1,9 @@
-package ex01;
+package models;
 
 import jakarta.persistence.*;
 
 @Entity
-public class ex01 {
+public class Atricle {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
