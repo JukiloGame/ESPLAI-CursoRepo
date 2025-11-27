@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 // @Table(unituqueConstraints = @UniqueConstaint(name = "UK_Article_reference", columnNames = "reference"))
 @Table (name = "Articles")
-public class Atricle {
+public class Article {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
